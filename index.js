@@ -1,19 +1,13 @@
-    const http = require('http'); // Import the built-in http module
+    const express = require('express');
+    const app = express();
+    const PORT = 80; // You can choose any available port
 
-    const hostname = 'http://44.210.69.137'; // Localhost
-    const port = 80; // Choose a port number
-
-    // Create the server
-    const server = http.createServer((req, res) => {
-      // Set the response HTTP header with a status code and content type
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/plain');
-
-      // Send the response body
-      res.end('Hello World!\n');
+    // Define a route for the root URL (/)
+    app.get('/', (req, res) => {
+      res.send('<h1>Hello from your Express server!</h1>');
     });
 
-    // Start the server and listen for requests
-    server.listen(port, hostname, () => {
-      console.log(`Server running at http://${hostname}:${port}/`);
+    // Start the server
+    app.listen(PORT, () => {
+      console.log(`Server is listening at http://localhost:${PORT}`);
     });
