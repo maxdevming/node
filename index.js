@@ -1,6 +1,6 @@
     const http = require('http'); // Import the built-in http module
 
-    const hostname = '44.210.69.137'; // Localhost
+    const hostname = '127.0.0.1'; // Localhost
     const port = 80; // Choose a port number
 
     // Create the server
